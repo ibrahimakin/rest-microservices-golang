@@ -1,9 +1,12 @@
 package app
 
-import "github.com/ibrahimakin/rest-microservices-golang/bookstore_users-api/controllers"
+import (
+	"github.com/ibrahimakin/rest-microservices-golang/bookstore_users-api/controllers/ping"
+	"github.com/ibrahimakin/rest-microservices-golang/bookstore_users-api/controllers/users"
+)
 
 func mapUrls() {
-	router.GET("/ping", controllers.Ping)
-	router.GET("/users/:user_id", controllers.GetUser)
-	router.POST("/users", controllers.CreateUser)
+	router.GET("/ping", ping.Ping)
+	router.GET("/users/:user_id", users.GetUser)
+	router.POST("/users", users.CreateUser)
 }
